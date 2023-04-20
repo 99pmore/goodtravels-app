@@ -4,7 +4,8 @@ import logo from '../assets/img/logo.webp'
 import { UserContext } from '../UserContext'
 
 export const Menu = ({ isLoggedIn }) => {
-    const { user } = useContext(UserContext)
+    // const { user } = useContext(UserContext)
+    const user = JSON.parse(localStorage.getItem('user'));
 
     return (
         <nav>

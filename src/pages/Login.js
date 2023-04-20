@@ -22,6 +22,7 @@ export const Login = ({ setIsLoggedIn }) => {
             if(response.ok) {
                 const searchedUser = await getUserByEmail(email)
                 setUser(searchedUser)
+                localStorage.setItem('user', JSON.stringify(searchedUser))
 
                 localStorage.setItem('isLoggedIn', 'true')
                 setIsLoggedIn(true)
