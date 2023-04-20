@@ -3,9 +3,12 @@ import { useRoutes } from "react-router-dom"
 import { Login } from "./pages/Login"
 import { Home } from "./pages/Home"
 import { Register } from './pages/Register'
+import UserContext from './UserContext'
+import { Value } from 'sass'
 
 function App() {
 	const [ isLoggedIn, setIsLoggedIn ] = useState(false)
+	const [ user, setUser ] = useState(null)
 
 	useEffect(() => {
 		const loggedIn = localStorage.getItem('isLoggedIn')
@@ -34,9 +37,11 @@ function App() {
 	])
 
 	return (
-		<div className="App">
-			{ routes }
-		</div>
+		<UserContext.Provider value={{ user, setUser }}>
+			<div className="App">
+				{ routes }
+			</div>
+		</UserContext.Provider>
 	)
 }
 
