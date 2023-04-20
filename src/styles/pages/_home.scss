@@ -1,0 +1,14 @@
+.home-main {
+    width: 100%;
+    padding: 5% 10%;
+
+    .container {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 250px);
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 40px;
+    }
+}

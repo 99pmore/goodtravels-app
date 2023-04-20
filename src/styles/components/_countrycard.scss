@@ -1,0 +1,74 @@
+.card {
+    background: burlywood;
+    border-radius: 25px;
+    box-shadow: 0 0 20px #3333333f;
+
+    width: 250px;
+    aspect-ratio: 3/4;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    .flag {
+        width: 100%;
+        
+        img {
+            width: 100%;
+            aspect-ratio: 3/2;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .card-body {
+        width: 100%;
+        padding: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        h3, h4 {
+            color: white;
+        }
+
+    }
+
+    .buttons {
+        width: 100%;
+
+        button {
+            cursor: pointer;
+            background: white;
+            border: none;
+
+            width: 50%;
+            height: 40px;
+
+            transition: all 0.2s;
+
+            &:first-child {
+                border-radius: 0 0 0 25px;
+                border-right: 1px solid #aaa;
+
+                &:hover {
+                    background: rgb(219, 103, 103);
+                    color: white;
+                }
+            }
+
+            &:last-child {
+                border-radius: 0 0 25px 0;
+
+                &:hover {
+                    background: rgb(52, 192, 192);
+                    color: white;
+                }
+            }
+        }
+    }
+}

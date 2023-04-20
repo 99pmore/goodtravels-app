@@ -1,0 +1,116 @@
+.login-main {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    
+    .bg {
+        background: burlywood;
+
+        width: 50%;
+        height: 100vh;
+
+        position: absolute;
+        left: 0;
+    }
+    
+    .container {
+        box-shadow: 0 0 20px #3333333f;
+        border-radius: 25px;
+
+        width: 60%;
+        height: 50%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 10;
+
+        .logo {
+            background: burlywood;
+            border-radius: 25px 0 0 25px;
+
+            width: 50%;
+            height: 100%;
+            padding: 80px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 250px;
+            }
+        }
+
+        .form {
+            background: #fff;
+            border-radius: 0 25px 25px 0;
+
+            width: 50%;
+            height: 100%;
+            padding: 80px;
+
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+
+            form {
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 25px;
+    
+                input {
+                    outline: none;
+                    border: 1px solid #aaa;
+
+                    width: 100%;
+                    height: 40px;
+                    padding: 10px;
+
+                    &:focus {
+                        border: 1px solid #666;
+                    }
+                }
+    
+                button {
+                    cursor: pointer;
+                    background: burlywood;
+                    color: #fff;
+                    border: none;
+    
+                    height: 40px;
+                    padding: 12px;
+    
+                    transition: all 0.2s;
+    
+                    &:hover {
+                        background: #aaa;
+                    }
+                }
+            }
+
+            p {
+                .link {
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: burlywood;
+
+                    &:hover {
+                        color: #aaa;
+                    }
+                }
+            }
+        }
+    }
+}
