@@ -19,9 +19,10 @@ export const Register = ({ setIsLoggedIn }) => {
             headers: {'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, password })
         })
-        .then(response => {
+        .then(async response => {
             if(response.ok) {
-                setUser(getUserByEmail(email))
+                const searchedUser = await getUserByEmail(email)
+                setUser(searchedUser)
 
                 localStorage.setItem('isLoggedIn', 'true')
                 setIsLoggedIn(true)
