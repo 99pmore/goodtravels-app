@@ -1,11 +1,22 @@
 export const CountryCard = ({ country }) => {
 
-    const handleToVisitButton = () => {
-        
+    const user = JSON.parse(localStorage.getItem('user'))
+
+    const handleVisitButton = async () => {
+
+        await fetch(`http://localhost:4000/api/users/${user._id}/countriesVisited`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({name: country.name})
+        })
     }
 
-    const handleVisitButton = () => {
-
+    const handleToVisitButton = async () => {
+        await fetch(`http://localhost:4000/api/users/${user._id}/countriesToVisit`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({name: country.name})
+        })
     }
 
     return (
@@ -18,8 +29,8 @@ export const CountryCard = ({ country }) => {
                 <h4>{ country.region }</h4>
             </div>
             <div className="buttons">
-                <button onClick={ handleToVisitButton }>Por visitar</button>
                 <button onClick={ handleVisitButton }>Visitado</button>
+                <button onClick={ handleToVisitButton }>Por visitar</button>
             </div>
         </div>
     )
