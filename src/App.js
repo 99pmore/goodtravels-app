@@ -3,8 +3,7 @@ import { useRoutes } from "react-router-dom"
 import { Login } from "./pages/Login"
 import { Home } from "./pages/Home"
 import { Register } from './pages/Register'
-import UserContext from './UserContext'
-import { Value } from 'sass'
+import { UserContext } from './UserContext'
 
 function App() {
 	const [ isLoggedIn, setIsLoggedIn ] = useState(false)
@@ -13,14 +12,14 @@ function App() {
 	useEffect(() => {
 		const loggedIn = localStorage.getItem('isLoggedIn')
 		if (loggedIn) {
-		setIsLoggedIn(true)
+			setIsLoggedIn(true)
 		}
 	}, [])
 
 	const routes = useRoutes([
 		{
 			path: '/',
-			element: isLoggedIn ? <Home /> : <Login setIsLoggedIn={ setIsLoggedIn } />
+			element: isLoggedIn ? <Home isLoggedIn={ isLoggedIn } /> : <Login setIsLoggedIn={ setIsLoggedIn } />
 		},
 		{
 			path: 'Login',
@@ -32,7 +31,7 @@ function App() {
 		},
 		{
 			path: 'Home',
-			element: <Home />
+			element: <Home isLoggedIn={ isLoggedIn } />
 		},
 	])
 

@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import logo from '../assets/img/logo.webp'
+import { UserContext } from '../UserContext'
 
 export const Register = ({ setIsLoggedIn }) => {
 
@@ -8,6 +9,7 @@ export const Register = ({ setIsLoggedIn }) => {
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const navigate = useNavigate()
+    const { setUser } = useContext(UserContext)
 
     const handleLogin = async (e) => {
         e.preventDefault()
@@ -17,19 +19,32 @@ export const Register = ({ setIsLoggedIn }) => {
             headers: {'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, password })
         })
-        .then((response) => {
+        .then(response => {
             if(response.ok) {
+                setUser(getUserByEmail(email))
+
                 localStorage.setItem('isLoggedIn', 'true')
                 setIsLoggedIn(true)
                 navigate('/')
+
             } else {
                 alert('Error')
-                throw new Error('Failed to login')
             }
         })
-        .catch((error) => {
+        .catch(error => {
             alert(`Error: ${error.message}`)
         })
+    }
+
+    const getUserByEmail = async (email) => {
+        const response = await fetch(`http://localhost:4000/api/users/email/${email}`)
+
+        if (!response.ok) {
+            alert('Failed to get user by email')
+        }
+      
+        const user = await response.json()
+        return user
     }
 
     return (

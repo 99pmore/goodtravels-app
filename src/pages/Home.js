@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Menu } from '../components/Menu'
 import { CountryCard } from '../components/CountryCard'
 
-export const Home = () => {
+export const Home = ({ isLoggedIn }) => {
 
     const [ countries, setCountries ] = useState([])
 
@@ -16,7 +16,7 @@ export const Home = () => {
 
     return (
         <>
-            <Menu />
+            <Menu isLoggedIn={ isLoggedIn } />
             <main className='home-main'>
                 <div className="container">
                     {
