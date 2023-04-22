@@ -1,4 +1,4 @@
-nav {
+.nav-bar {
     background: burlywood;
     box-shadow: 0 0 20px #3333333f;
 
@@ -10,31 +10,46 @@ nav {
     justify-content: space-between;
     align-items: center;
 
+    // position: fixed;
+    z-index: 10;
+
     .logo {
         cursor: pointer;
         display: flex;
         align-items: center;
         gap: 10px;
 
-        h1 {
-            font-family: $logo-font;
-            font-weight: 100;
-            letter-spacing: 1px;
-            color: white;
-        }
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
 
-        img {
-            width: 40px;
+            h1 {
+                font-family: $logo-font;
+                font-weight: 100;
+                letter-spacing: 1px;
+                color: white;
+            }
+    
+            img {
+                width: 40px;
+            }
         }
     }
 
     .links {
         display: flex;
-        gap: 30px;
+        gap: 40px;
 
         .link {
             text-decoration: none;
             color: white;
+            font-weight: 500;
+        }
+
+        .logout {
+            cursor: pointer;
         }
     }
 }

@@ -1,7 +1,6 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import logo from '../assets/img/logo.webp'
-import { UserContext } from '../UserContext'
 
 export const Register = ({ setIsLoggedIn }) => {
 
@@ -9,7 +8,6 @@ export const Register = ({ setIsLoggedIn }) => {
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const navigate = useNavigate()
-    const { setUser } = useContext(UserContext)
 
     const handleLogin = async (e) => {
         e.preventDefault()
@@ -22,7 +20,6 @@ export const Register = ({ setIsLoggedIn }) => {
         .then(async response => {
             if(response.ok) {
                 const searchedUser = await getUserByEmail(email)
-                setUser(searchedUser)
                 localStorage.setItem('user', JSON.stringify(searchedUser))
 
                 localStorage.setItem('isLoggedIn', 'true')

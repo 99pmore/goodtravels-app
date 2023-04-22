@@ -1,10 +1,11 @@
 .card {
     cursor: pointer;
-    background: burlywood;
+    background: white;
     border-radius: 25px;
+    border: 1px solid #aaa;
     box-shadow: 0 0 20px #3333333f;
 
-    width: 250px;
+    width: 280px;
     aspect-ratio: 3/4;
 
     display: flex;
@@ -19,10 +20,14 @@
     }
 
     .flag {
+        border-radius: 25px 25px 0 0;
+        border-bottom: 1px solid #aaa;
         width: 100%;
         
         img {
+            border-radius: 25px 25px 0 0;
             width: 100%;
+            height: 100%;
             aspect-ratio: 3/2;
             object-fit: cover;
             object-position: center;
@@ -32,25 +37,27 @@
     .card-body {
         width: 100%;
         padding: 20px;
-
+        
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         gap: 20px;
-
+        
         h3, h4 {
-            color: white;
+            color: burlywood;
         }
-
+        
     }
-
+    
     .buttons {
+        border-top: 1px solid #aaa;
         width: 100%;
 
         button {
             cursor: pointer;
-            background: white;
+            background: burlywood;
+            color: white;
             border: none;
 
             width: 50%;
@@ -61,20 +68,14 @@
             &:first-child {
                 border-radius: 0 0 0 25px;
                 border-right: 1px solid #aaa;
-
-                &:hover {
-                    background: rgb(219, 103, 103);
-                    color: white;
-                }
             }
 
             &:last-child {
                 border-radius: 0 0 25px 0;
+            }
 
-                &:hover {
-                    background: rgb(52, 192, 192);
-                    color: white;
-                }
+            &:hover {
+                background: #aaa;
             }
         }
     }

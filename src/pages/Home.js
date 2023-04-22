@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Menu } from '../components/Menu'
 import { CountryCard } from '../components/CountryCard'
+import { Loader } from '../components/Loader'
 
-export const Home = ({ isLoggedIn }) => {
+export const Home = () => {
 
     const [ countries, setCountries ] = useState([])
 
@@ -14,15 +14,28 @@ export const Home = ({ isLoggedIn }) => {
         })
     }, [])
 
+    const renderLoader = () => {
+        const loaders = []
+
+        for (let i = 0; i < 16; i++) {
+            loaders.push(<Loader key={ i } />)
+        }
+
+        return loaders
+    }
+
     return (
         <>
-            <Menu isLoggedIn={ isLoggedIn } />
             <main className='home-main'>
                 <div className="container">
                     {
-                        countries.map(country => {
-                            return <CountryCard key={ country.name } country={ country } />
-                        })
+                        countries.length ? (
+                            countries.map(country => {
+                                return <CountryCard key={ country.name } country={ country } />
+                            })
+                        ) : (
+                            renderLoader()
+                        )
                     }
                 </div>
             </main>
