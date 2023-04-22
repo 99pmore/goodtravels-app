@@ -6,6 +6,7 @@ import { Register } from './pages/Register'
 import { Visited } from './pages/Visited'
 import { ToVisit } from './pages/ToVisit'
 import { Menu } from './components/Menu'
+import { Profile } from './pages/Profile'
 
 function App() {
 	const [ isLoggedIn, setIsLoggedIn ] = useState(false)
@@ -41,6 +42,10 @@ function App() {
 		{
 			path: 'ToVisit',
 			element: <ToVisit isLoggedIn={ isLoggedIn } />
+		},
+		{
+			path: 'Profile',
+			element: <Profile />
 		},
 	])
 
