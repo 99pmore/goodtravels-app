@@ -47,17 +47,48 @@
 
         .sec-info {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             gap: 30px;
 
-            .link {
-                cursor: pointer;
-                font-weight: 600;
-                text-decoration: none;
-                color: burlywood;
+            .sec-data {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
 
-                &:hover {
-                    color: #aaa;
+                .link {
+                    cursor: pointer;
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: burlywood;
+    
+                    &:hover {
+                        color: #aaa;
+                    }
+                }
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 30px;
+
+                button {
+                    cursor: pointer;
+                    background: burlywood;
+                    color: white;
+                    border: none;
+                    border-radius: 25px;
+
+                    height: 40px;
+                    width: 120px;
+        
+                    transition: all 0.2s;
+        
+                    &:hover {
+                        background: #aaa;
+                    }
                 }
             }
         }

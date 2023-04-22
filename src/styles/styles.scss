@@ -37,4 +37,18 @@
 body {
     background-color: white;
     font-family: $main-font;
+
+    &::-webkit-scrollbar {
+        background: #fff;
+        box-shadow: inset 0 0 2px #3333333f;
+        width: 12px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: burlywood;
+
+        &:hover {
+            background: rgb(192, 158, 113);
+        }
+    }
 }
