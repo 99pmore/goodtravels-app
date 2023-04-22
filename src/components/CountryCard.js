@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 export const CountryCard = ({ country }) => {
@@ -38,12 +39,20 @@ export const CountryCard = ({ country }) => {
         })
     }
 
+    const navigate = useNavigate()
+    const toCountry = () => {
+        navigate(`/countries/${country.name}`, 
+        { 
+            state: { country } 
+        })
+    }
+
     return (
         <div className="card">
-            <div className="flag">
+            <div className="flag" onClick={ toCountry }>
                 <img src={ country.flag } alt={ country.name } />
             </div>
-            <div className="card-body">
+            <div className="card-body" onClick={ toCountry }>
                 <h3>{ country.name }</h3>
                 <h4>{ country.region }</h4>
             </div>

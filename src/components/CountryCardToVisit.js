@@ -1,3 +1,4 @@
+// import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 
@@ -57,6 +58,14 @@ export const CountryCardToVisit = ({ country, updateCountries }) => {
             })
         })
     }
+
+    // const navigate = useNavigate()
+    // const toCountry = () => {
+    //     navigate(`/countries/${country.name}`, 
+    //     { 
+    //         state: { country } 
+    //     })
+    // }
 
     return (
         <div className="card">

@@ -7,6 +7,7 @@ import { Visited } from './pages/Visited'
 import { ToVisit } from './pages/ToVisit'
 import { Menu } from './components/Menu'
 import { Profile } from './pages/Profile'
+import { CountryInfo } from './pages/CountryInfo'
 
 function App() {
 	const [ isLoggedIn, setIsLoggedIn ] = useState(false)
@@ -46,6 +47,10 @@ function App() {
 		{
 			path: 'Profile',
 			element: <Profile />
+		},
+		{
+			path: 'countries/:name',
+			element: <CountryInfo />
 		},
 	])
 
