@@ -11,7 +11,7 @@ export const CountryInfo = () => {
     const country = location.state.country
 
     const handleVisitedButton = async () => {
-        await fetch(`http://localhost:4000/api/users/${user._id}/countriesVisited`, {
+        await fetch(`https://goodtravels-api.up.railway.app/api/users/${user._id}/countriesVisited`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({name: country.name})
@@ -28,7 +28,7 @@ export const CountryInfo = () => {
     }
 
     const handleToVisitButton = async () => {
-        await fetch(`http://localhost:4000/api/users/${user._id}/countriesToVisit`, {
+        await fetch(`https://goodtravels-api.up.railway.app/api/users/${user._id}/countriesToVisit`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({name: country.name})

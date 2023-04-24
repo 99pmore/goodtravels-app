@@ -8,7 +8,7 @@ export const ToVisit = () => {
     const [ countriesToVisit, setCountriesToVisit ] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:4000/api/users/${user._id}/countriesToVisit`)
+        fetch(`https://goodtravels-api.up.railway.app/api/users/${user._id}/countriesToVisit`)
         .then(response => response.json())
         .then(jsonResponse => {
             setCountriesToVisit([ ...countriesToVisit, ...jsonResponse ])

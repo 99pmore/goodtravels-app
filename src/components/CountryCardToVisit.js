@@ -13,7 +13,7 @@ export const CountryCardToVisit = ({ country, updateCountries }) => {
     }, [])
 
     const getData = () => {
-        fetch(`http://localhost:4000/api/countries/${country}`)
+        fetch(`https://goodtravels-api.up.railway.app/api/countries/${country}`)
         .then(response => response.json())
         .then(jsonResponse => {
             setCountries([ ...countries, ...jsonResponse ])
@@ -22,7 +22,7 @@ export const CountryCardToVisit = ({ country, updateCountries }) => {
     }
 
     const handleDeleteButton = async () => {
-        await fetch(`http://localhost:4000/api/users/${user._id}/countriesToVisit`, {
+        await fetch(`https://goodtravels-api.up.railway.app/api/users/${user._id}/countriesToVisit`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({name: countryInfo?.name})
@@ -41,7 +41,7 @@ export const CountryCardToVisit = ({ country, updateCountries }) => {
     }
 
     const handleToVisitButton = async () => {
-        await fetch(`http://localhost:4000/api/users/${user._id}/countriesVisited`, {
+        await fetch(`https://goodtravels-api.up.railway.app/api/users/${user._id}/countriesVisited`, {
             method: 'PATCH',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({name: countryInfo?.name})

@@ -11,7 +11,7 @@ export const Login = ({ setIsLoggedIn }) => {
     const handleLogin = async (e) => {
         e.preventDefault()
 
-        await fetch('http://localhost:4000/api/login', {
+        await fetch('https://goodtravels-api.up.railway.app/api/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -35,7 +35,7 @@ export const Login = ({ setIsLoggedIn }) => {
     }
 
     const getUserByEmail = async (email) => {
-        const response = await fetch(`http://localhost:4000/api/users/email/${email}`)
+        const response = await fetch(`https://goodtravels-api.up.railway.app/api/users/email/${email}`)
 
         if (!response.ok) {
             alert('Failed to get user by email')

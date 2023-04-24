@@ -7,7 +7,7 @@ export const Home = () => {
     const [ countries, setCountries ] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:4000/api/countries')
+        fetch('https://goodtravels-api.up.railway.app/api/countries')
         .then(response => response.json())
         .then(jsonResponse => {
             setCountries([ ...countries, ...jsonResponse ])

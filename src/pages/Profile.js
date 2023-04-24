@@ -11,7 +11,7 @@ export const Profile = () => {
     // const [ password, setPassword ] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:4000/api/users/${user._id}`)
+        fetch(`https://goodtravels-api.up.railway.app/api/users/${user._id}`)
         .then(response => response.json())
         .then(jsonResponse => {
             setId(jsonResponse._id)
@@ -37,7 +37,7 @@ export const Profile = () => {
         //     data.password = password
         // }
 
-        await fetch(`http://localhost:4000/api/users/${id}`, {
+        await fetch(`https://goodtravels-api.up.railway.app/api/users/${id}`, {
             method: 'PATCH',
             headers: {'Content-Type': 'application/json' },
             body: JSON.stringify(data)
