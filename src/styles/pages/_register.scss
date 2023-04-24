@@ -71,6 +71,7 @@
                     background: burlywood;
                     color: #fff;
                     border: none;
+                    border-radius: 25px;
     
                     height: 40px;
                     padding: 12px;
@@ -110,6 +111,51 @@
 
             img {
                 width: 250px;
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .register-main {
+        .bg-reg { 
+            height: 50%;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .container-reg {
+            width: 90%;
+            height: 75%;
+    
+            flex-direction: column;
+    
+            .logo-reg {
+                border-radius: 0 0 25px 25px;
+    
+                width: 100%;
+                height: 50%;
+                padding: 20px;
+    
+                img {
+                    width: 150px;
+                }
+            }
+    
+            .form-reg {
+                border-radius: 25px 25px 0 0;
+    
+                width: 100%;
+                height: 50%;
+                padding: 20px;
+
+                form {
+                    gap: 12px;
+                }
+    
+                p  {
+                    font-size: 14px;
+                }
             }
         }
     }

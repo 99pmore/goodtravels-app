@@ -88,6 +88,7 @@
                     background: burlywood;
                     color: #fff;
                     border: none;
+                    border-radius: 25px;
     
                     height: 40px;
                     padding: 12px;
@@ -109,6 +110,51 @@
                     &:hover {
                         color: #aaa;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .login-main {
+        .bg { 
+            height: 50%;
+            width: 100%;
+            top: 0;
+        }
+
+        .container {
+            width: 90%;
+            height: 75%;
+    
+            flex-direction: column;
+    
+            .logo {
+                border-radius: 25px 25px 0 0;
+    
+                width: 100%;
+                height: 50%;
+                padding: 20px;
+    
+                img {
+                    width: 150px;
+                }
+            }
+    
+            .form {
+                border-radius: 0 0 25px 25px;
+    
+                width: 100%;
+                height: 50%;
+                padding: 20px;
+
+                form {
+                    gap: 12px;
+                }
+    
+                p  {
+                    font-size: 14px;
                 }
             }
         }
