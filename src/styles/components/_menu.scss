@@ -39,17 +39,63 @@
     }
 
     .links {
+        width: 50%;
         display: flex;
-        gap: 40px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
 
         .link {
+            text-align: center;
             text-decoration: none;
             color: white;
             font-weight: 500;
+
+            transition: all 0.2s;
+
+            &:hover {
+                transform: scale(1.15);
+            }
         }
 
         .logout {
             cursor: pointer;
+
+            transition: all 0.2s;
+
+            &:hover {
+                transform: scale(1.15);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        height: 50px;
+        padding: 10px 15px;
+
+        justify-content: space-between;
+    
+        .logo {
+            display: none;
+        }
+    
+        .links {
+            width: 100%;
+            gap: 10px;
+    
+            .link {
+                font-size: 14px;
+            }
+
+            p {
+                display: none;
+            }
+
+            .logout {
+                font-size: 16px;
+            }
         }
     }
 }

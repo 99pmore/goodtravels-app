@@ -60,3 +60,19 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .loader {
+        width: 150px;
+        aspect-ratio: 3/4;
+    
+        .flag-loader {
+            height: 102.66px;
+        }
+    
+        .card-body-loader {
+            padding: 10px;
+            gap: 5px; 
+        }
+    }
+}

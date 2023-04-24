@@ -33,6 +33,7 @@
             background: burlywood;
             color: #fff;
             border: none;
+            border-radius: 25px;
 
             height: 40px;
             padding: 12px;
@@ -42,6 +43,16 @@
             &:hover {
                 background: #aaa;
             }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 10%;
+    
+        .profile-form {
+            width: 90%;
         }
     }
 }

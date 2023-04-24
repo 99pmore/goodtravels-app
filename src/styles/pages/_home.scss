@@ -12,3 +12,15 @@
         gap: 40px;
     }
 }
+
+@media (max-width: 768px) {
+    .home-main {
+        padding: 5%;
+    
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 150px);
+            gap: 20px;
+        }
+    }
+}
